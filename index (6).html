@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProWorld - घर बैठे ₹15,000/दिन | Free Laptop + Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        
+        /* WhatsApp Sticky Button - हमेशा Visible */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background: linear-gradient(45deg, #25D366, #128C7E); border-radius: 50px;
+            text-align: center; font-size: 30px; box-shadow: 2px 2px 20px #25D36680;
+            z-index: 1000; transition: all 0.3s; cursor: pointer;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float a { color: white; text-decoration: none; display: block; padding-top: 12px; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 999; }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: 700; }
+        .header-cta { background: #FF6B6B; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .header-cta:hover { background: #FF5252; transform: translateY(-2px); }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 120px 2rem 80px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; animation: fadeInUp 1s ease; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: linear-gradient(45deg, #FF6B6B, #FF8E8E); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 10px 30px #FF6B6B80; }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 40px #FF6B6B99; }
+        .btn-whatsapp { background: #25D366; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 3rem; font-weight: 700; color: #FFD700; }
+        
+        /* Features Section */
+        .features { padding: 80px 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature-card { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s; border-top: 5px solid #667eea; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 30px 80px rgba(0,0,0,0.15); }
+        .feature-icon { font-size: 3rem; color: #667eea; margin-bottom: 1rem; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #333; }
+        
+        /* Testimonials */
+        .testimonials { background: #f8f9fa; padding: 80px 2rem; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .testimonial { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); text-align: center; }
+        .stars { color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem; }
+        .user-img { width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 1rem; background: #ddd; }
+        
+        /* Form Section */
+        .form-section { padding: 80px 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .form-container { max-width: 600px; margin: 0 auto; text-align: center; }
+        .form-title { font-size: 2.5rem; margin-bottom: 1rem; }
+        form { display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto; }
+        input, textarea { padding: 15px; border: none; border-radius: 10px; font-size: 1rem; font-family: inherit; }
+        .submit-btn { background: #FF6B6B; color: white; padding: 18px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .submit-btn:hover { background: #FF5252; transform: translateY(-2px); }
+        
+        /* Footer */
+        footer { background: #333; color: white; text-align: center; padding: 2rem; }
+        .contact-info { font-size: 1.2rem; margin-bottom: 1rem; }
+        .whatsapp-number { color: #25D366; font-weight: 700; font-size: 1.5rem; }
+        
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeInUp 1s ease forwards; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
+            nav { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Sticky - हमेशा Visible -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <a href="#" onclick="openWhatsApp()"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🚀 ProWorld</div>
+            <a href="#form" class="header-cta">अभी Join करें ₹500</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>😳 सिर्फ 2 घंटे में ₹15,000 कमाओ!</h1>
+        <p>घर बैठे simple review typing job | 5 दिन FREE training | 24 घंटे में FREE Laptop 💻<br><strong>100% Guaranteed Income</strong></p>
+        <div class="cta-buttons">
+            <a href="#form" class="btn-primary">₹500 में Join करें</a>
+            <a href="https://wa.me/919610874247?text=ProWorld%20Job%20के%20लिए%20interested%20हूँ!" class="btn-primary btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp पर बात करें
+            </a>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">₹15,000</div>
+                <div>2 घंटे में</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">💻 FREE</div>
+                <div>Laptop</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">5 Days</div>
+                <div>Training</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div>Happy Users</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2 class="section-title fade-in">क्यों चुनें ProWorld? ✅</h2>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💰</div>
+                <h3>High Salary</h3>
+                <p>सिर्फ 2 घंटे काम = ₹15,000 advance salary। Daily payout!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💻</div>
+                <h3>FREE Laptop</h3>
+                <p>24 घंटे के अंदर नया laptop घर डिलीवर। No cost!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎓</div>
+                <h3>5 Days Training</h3>
+                <p>Complete beginner के लिए step-by-step training। 100% easy!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🏠</div>
+                <h3>Work From Home</h3>
+                <p>ना office जाना, ना boss। अपने time पर काम करो!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🚫</div>
+                <h3>No Skills Needed</h3>
+                <p>ना degree, ना experience। बस typing आनी चाहिए!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">✅</div>
+                <h3>100% Safe</h3>
+                <p>Registered company। Money-back guarantee। Transparent process!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">हमारे Students की Success Stories ⭐</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial fade-in">
+                <div class="stars">★★★★★</div>
+                <div class="user-img"></div>
+                <p>"पहले दिन से ₹15,000 मिल गए! Laptop भी आ गया। Amazing!"</p>
+                <strong>- रीता शर्मा, Delhi</strong>
+            </div>
+            <div class="testimonial fade-in">
+                <div class="stars">★★★★★</div>
+                <div class="user-img"></div>
+                <p>"No skill थी लेकिन training के बाद easily ₹50,000/month!"</p>
+                <strong>- राहुल कुमार, Mumbai</strong>
+            </div>
+            <div class="testimonial fade-in">
+                <div class="stars">★★★★★</div>
+                <div class="user-img"></div>
+                <p>"Best WFH job ever! Recommend to everyone."</p>
+                <strong>- प्रिया सिंह, Bangalore</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form" class="form-section">
+        <div class="form-container">
+            <h2 class="form-title">अभी Join करें - Limited Spots! ⏰</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">₹500 Registration = Lifetime Opportunity</p>
+            <form id="joinForm" onsubmit="submitForm(event)">
+                <input type="text" placeholder="आपका नाम" required>
+                <input type="tel" placeholder="मोबाइल नंबर" required>
+                <input type="email" placeholder="Email (Optional)">
+                <textarea placeholder="क्या आप ready हैं earning start करने के लिए?" rows="3"></textarea>
+                <button type="submit" class="submit-btn">₹500 Pay & Join Now 🚀</button>
+            </form>
+            <p style="margin-top: 1rem; font-size: 1.1rem;">
+                या Direct WhatsApp: <a href="https://wa.me/919610874247?text=Join%20form%20filled!" style="color: #FFD700; font-weight: 700;" target="_blank">9610874247</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <strong>📞 Contact: <span class="whatsapp-number">9610874247</span></strong><br>
+            ProWorld © 2024 | All Rights Reserved | 100% Safe & Secure
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Function
+        function openWhatsApp() {
+            window.open('https://wa.me/919610874247?text=Hi!%20ProWorld%20job%20के%20about%20में%20जानना%20है...', '_blank');
+        }
+
+        // Form Submit
+        function submitForm(e) {
+            e.preventDefault();
+            alert('🎉 Application Submitted! हम 5 मिनट में WhatsApp पर contact करेंगे।');
+            openWhatsApp();
+            document.getElementById('joinForm').reset();
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Fade In Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
